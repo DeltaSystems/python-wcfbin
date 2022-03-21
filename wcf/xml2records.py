@@ -168,7 +168,8 @@ class XMLParser(HTMLParser):
         # text as fallback
         val = len(data.encode('utf-16le'))
         if val < 2**8:
-            return UnicodeChars8TextRecord(data)
+            #return UnicodeChars8TextRecord(data)
+            return UnicodeChars16TextRecord(data)
         elif val < 2**16:
             return UnicodeChars16TextRecord(data)
         elif val < 2**32:
